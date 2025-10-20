@@ -21,7 +21,7 @@ public class ProducerTowerScript : MonoBehaviour
         if(ProduceTimerCurrent >= ProduceTimerMax)
         {
             //SpawnGrudge
-            Instantiate<GameObject>(GrudgePrefab, gameObject.transform);
+            Instantiate(GrudgePrefab, new Vector3((transform.position.x + Random.Range(-.2f, .3f)),gameObject.transform.position.y), Quaternion.identity);
             ProduceTimerCurrent = 0;
         }
     }

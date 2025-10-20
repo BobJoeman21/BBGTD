@@ -6,15 +6,22 @@ public class TowerBase : MonoBehaviour
 {
 
     public int TowerPrice;
-    // Start is called before the first frame update
-    void Start()
+    public int MaxHP;
+    private int CurrentHP;
+
+    private void Start()
     {
-        
+        CurrentHP = MaxHP;
     }
 
-    // Update is called once per frame
-    void Update()
+    public int DmgPlant(int dmgAmount)
     {
-        
+        CurrentHP -= dmgAmount;
+        return CurrentHP;
+    }
+
+    public void KillPlant()
+    {
+        Destroy(gameObject);
     }
 }

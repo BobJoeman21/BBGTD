@@ -18,7 +18,7 @@ public class ZombieManager : MonoBehaviour
 
     public void SpawnZombie(int ZombieToSpawn)
     {
-        Instantiate<GameObject>(ZombieList[ZombieToSpawn], spawnLocs[Random.Range(0,4)], Quaternion.identity);
+        Instantiate<GameObject>(ZombieList[ZombieToSpawn], spawnLocs[Random.Range(0,5)], Quaternion.identity);
     }
 
     public void SpawnHorde()

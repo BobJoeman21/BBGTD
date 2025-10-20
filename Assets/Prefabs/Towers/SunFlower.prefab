@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 486827493065706778}
   - component: {fileID: 417395399568037024}
   - component: {fileID: 7718455709995038065}
-  m_Layer: 0
+  - component: {fileID: 8100773294796073742}
+  m_Layer: 7
   m_Name: SunFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerPrice: 25
+  MaxHP: 3
 --- !u!114 &7718455709995038065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +115,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrudgePrefab: {fileID: 5053934793873009689, guid: 81ebc27daab0f6a49a9b899e01498f80, type: 3}
-  ProduceTimerMax: 50
+  ProduceTimerMax: 150
+--- !u!58 &8100773294796073742
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916127357719372237}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &7234663372034886805
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894440247127275005}
   - component: {fileID: 2585669948972997139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Toshio_Saeki_(Daiki_Sawada)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
