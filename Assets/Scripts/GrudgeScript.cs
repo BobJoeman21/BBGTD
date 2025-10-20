@@ -19,6 +19,9 @@ public class GrudgeScript : MonoBehaviour
         if (moving)
         {
             transform.position += directionToTarget * 20f * Time.deltaTime;
+            if ((transform.position - targetPos).magnitude <= 1f){
+                Destroy(gameObject);
+            }
         }
     }
 }

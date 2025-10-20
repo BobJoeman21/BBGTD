@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public int ChosenTower;
     public int grudges;
     public LayerMask GrudgeMask;
+    public UIScript UIReference;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +40,18 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+            //TowerSpawn
             if (targetedTile != null && ChosenTower >= 0 && targetedTile.GetComponent<TileBaseScript>().hasTower == false)
             {
-                Instantiate(towers[ChosenTower], targetedTile.transform);
-                targetedTile.GetComponent<TileBaseScript>().hasTower = true;
+                //PriceCheck
+                if(grudges >= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice)
+                {
+                    Instantiate(towers[ChosenTower], targetedTile.transform);
+                    targetedTile.GetComponent<TileBaseScript>().hasTower = true;
+                    grudges -= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice;
+                    UIReference.UpdateGrudges(grudges);
+                }
+                
             }
             ChosenTower = -1;
         }
@@ -53,6 +62,6 @@ public class PlayerScript : MonoBehaviour
     {
         collectedGrudge.gameObject.GetComponentInParent<GrudgeScript>().collect();
         grudges += 25;
-        Debug.Log(grudges);
+        UIReference.UpdateGrudges(grudges);
     }
 }
