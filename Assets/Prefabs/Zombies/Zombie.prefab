@@ -96,6 +96,7 @@ MonoBehaviour:
   plantLayer:
     serializedVersion: 2
     m_Bits: 128
+  SpawnChance: 0.13
 --- !u!1 &2666938985746223982
 GameObject:
   m_ObjectHideFlags: 0

@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FallingGrudgePrefab: {fileID: 5053934793873009689, guid: 48d546c98c39fa340a6390a6d4e023ef, type: 3}
-  timerMax: 600
+  timerMax: 550
 --- !u!4 &708284789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 169828673633761035, guid: 7d65ce18663d0e7479ca6656a009ba71, type: 3}
@@ -1970,8 +1970,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieList:
-  - {fileID: 1821331085058906700, guid: 7b03a3be5640c654484da293ff38bcaf, type: 3}
-  - {fileID: 1821331085058906700, guid: 11e78bc7375299b48b1549f95c1a72fa, type: 3}
+  - ZombieToSpawn: {fileID: 1067512848428459546, guid: 7b03a3be5640c654484da293ff38bcaf, type: 3}
+    SpawnChance: 1
+  - ZombieToSpawn: {fileID: 1067512848428459546, guid: 11e78bc7375299b48b1549f95c1a72fa, type: 3}
+    SpawnChance: 0.91
+  - ZombieToSpawn: {fileID: 1067512848428459546, guid: f0f1c275f7355f24e9e36260b50f9771, type: 3}
+    SpawnChance: 0.32
   spawnLocs:
   - {x: 10.07, y: 2.51, z: 0}
   - {x: 10.07, y: 0.91, z: 0}
@@ -1980,7 +1984,7 @@ MonoBehaviour:
   - {x: 10.07, y: -2.4, z: 0}
   firstSpawnMax: 1000
   timerMax: 1000
-  hordeTimerMax: 10000
+  hordeTimerMax: 6000
   TotalTime: 0
 --- !u!1001 &989606313
 PrefabInstance:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZombieManager : MonoBehaviour
 {
     [Header("Zombie Spawn Info")]
-    public ZombieBase[] ZombieList;
+    public zombieType[] ZombieList;
     public Vector3[] spawnLocs;
     [Header("Spawn Timer")]
     public int firstSpawnMax;
@@ -13,28 +13,46 @@ public class ZombieManager : MonoBehaviour
     public int hordeTimerMax;
     private int timerCurrent;
     private int hordeTimerCurrent;
-    private float DifficultyLevel = 0f;
+    private int DifficultyLevel = 0;
     [HideInInspector] public float TotalTime; //Use this as Dificulty
 
 
-    /*public void SpawnZombie(float Random0to1)
+    [System.Serializable]
+    public class zombieType
+    {
+        public GameObject ZombieToSpawn;
+        [Range(0f,1f)]
+        public float SpawnChance;
+    }
+
+
+    public void SpawnZombie(float Random0to1)
     {
         Debug.Log(Random0to1);
         for(int i = 0; i < ZombieList.Length; i++)
         {
-            if(Random0to1 <= ZombieList[i].spawnChance)
+            if(Random0to1 <= ZombieList[i].SpawnChance)
             {
-                Instantiate<GameObject>(ZombieList[i].ZombieObject, spawnLocs[Random.Range(0, 5)], Quaternion.identity);
+                Instantiate<GameObject>(ZombieList[i].ZombieToSpawn, spawnLocs[Random.Range(0, 5)], Quaternion.identity);
+                ZombieList[0].SpawnChance = Mathf.Clamp((ZombieList[0].SpawnChance - 0.05f),0.1f,1f);
+                ZombieList[1].SpawnChance = Mathf.Clamp((ZombieList[1].SpawnChance - 0.01f),.5f,1f);
+                ZombieList[2].SpawnChance = Mathf.Clamp((ZombieList[2].SpawnChance + 0.05f),.0f,1f);
                 return;
             }
+
         }
-        
-        ZombieList[0].spawnChance = Mathf.Clamp01(ZombieList[0].spawnChance - 0.05f);
+
+
     }
-    */
     public void SpawnHorde()
     {
-        Debug.Log("HordeTime");
+        ZombieList[0].SpawnChance += .25f;
+        ZombieList[1].SpawnChance += .25f;
+
+        for (int i = 0; i <= 5 + (2 * DifficultyLevel); i++)
+        {
+            SpawnZombie(Random.value);
+        }
     }
 
     private void FixedUpdate()
@@ -43,16 +61,14 @@ public class ZombieManager : MonoBehaviour
         hordeTimerCurrent += 1;
         if(timerCurrent >= firstSpawnMax)
         {
-            //SpawnZombie(Random.value);
+            SpawnZombie(Random.value);
             firstSpawnMax = timerMax;
             timerCurrent = 0;
-            //Mathf.Clamp((Random.v),0,ZombieList.Length);
         }
         if(hordeTimerCurrent >= hordeTimerMax)
-        { 
+        {
             SpawnHorde();
             hordeTimerCurrent = 0;
-            DifficultyLevel += .1f;
         }
     }
 

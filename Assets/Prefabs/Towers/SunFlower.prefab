@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrudgePrefab: {fileID: 5053934793873009689, guid: 81ebc27daab0f6a49a9b899e01498f80, type: 3}
-  ProduceTimerMax: 300
+  ProduceTimerMax: 350
 --- !u!58 &8100773294796073742
 CircleCollider2D:
   m_ObjectHideFlags: 0
