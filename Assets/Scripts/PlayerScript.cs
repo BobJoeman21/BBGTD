@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     [HideInInspector] public GameObject targetedPacket;
     public GameObject[] towers;
     public int ChosenTower;
+    public PacketBaseScript ClickedPacket;
     public int grudges;
     public LayerMask GrudgeMask;
     public UIScript UIReference;
@@ -28,6 +29,7 @@ public class PlayerScript : MonoBehaviour
         {
             if(targetedPacket != null)
             {
+                ClickedPacket = targetedPacket.GetComponent<PacketBaseScript>();
                 ChosenTower = targetedPacket.GetComponent<PacketBaseScript>().TowerValue;
             }
             //Check Circle Around Mouse
@@ -50,10 +52,12 @@ public class PlayerScript : MonoBehaviour
                     targetedTile.GetComponent<TileBaseScript>().hasTower = true;
                     grudges -= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice;
                     UIReference.UpdateGrudges(grudges);
+                    ClickedPacket.Cooldown();
                 }
                 
             }
             ChosenTower = -1;
+            ClickedPacket = null;
         }
     }
 

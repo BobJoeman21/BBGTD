@@ -91,12 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f52ede68d8afc04b932f6bd53866198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 5
   AttackDmg: 1
-  attackTimerMax: 200
+  attackTimerMax: 125
   plantLayer:
     serializedVersion: 2
     m_Bits: 128
-  SpawnChance: 0.13
 --- !u!1 &2666938985746223982
 GameObject:
   m_ObjectHideFlags: 0

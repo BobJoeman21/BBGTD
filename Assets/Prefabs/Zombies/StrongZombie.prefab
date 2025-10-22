@@ -92,8 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f52ede68d8afc04b932f6bd53866198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 32
   AttackDmg: 1
-  attackTimerMax: 200
+  attackTimerMax: 50
   plantLayer:
     serializedVersion: 2
     m_Bits: 128

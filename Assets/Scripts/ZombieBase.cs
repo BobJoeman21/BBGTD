@@ -6,7 +6,7 @@ public class ZombieBase : MonoBehaviour
 {
 
 
-    int Health = 10;
+    public int Health = 10;
     private bool eating = false;
     public int AttackDmg;
     public int attackTimerMax;

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e81be3a3d8668459107ad28df0a524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPrice: 0
+  TowerPrice: 50
   MaxHP: 20
 --- !u!58 &3151171420820356998
 CircleCollider2D:

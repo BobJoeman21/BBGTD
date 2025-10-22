@@ -28,7 +28,6 @@ public class ZombieManager : MonoBehaviour
 
     public void SpawnZombie(float Random0to1)
     {
-        Debug.Log(Random0to1);
         for(int i = 0; i < ZombieList.Length; i++)
         {
             if(Random0to1 <= ZombieList[i].SpawnChance)
@@ -47,12 +46,11 @@ public class ZombieManager : MonoBehaviour
     public void SpawnHorde()
     {
         ZombieList[0].SpawnChance += .25f;
-        ZombieList[1].SpawnChance += .25f;
-
-        for (int i = 0; i <= 5 + (2 * DifficultyLevel); i++)
-        {
-            SpawnZombie(Random.value);
-        }
+        ZombieList[1].SpawnChance += .05f;
+        StartCoroutine(HordeSpawnLoop());
+        DifficultyLevel += 1;
+        timerMax -= 50;
+        Debug.Log("SPAWNEDHORDE");
     }
 
     private void FixedUpdate()
@@ -79,7 +77,15 @@ public class ZombieManager : MonoBehaviour
 
 
 
-
+    IEnumerator HordeSpawnLoop()
+    {
+        for (int i = 0; i <= 5 + (2 * DifficultyLevel); i++)
+        {
+            SpawnZombie(Random.value);
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+    }
 
 
 

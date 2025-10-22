@@ -22,6 +22,7 @@ public class GrudgeSpawnerScript : MonoBehaviour
         {
             SpawnGrudge();
             timerCurrent = 0;
+            timerMax += 50;
         }
     }
 
