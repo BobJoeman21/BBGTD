@@ -13,6 +13,7 @@ public class ZombieBase : MonoBehaviour
     public LayerMask plantLayer;
     private int attackTimerCurrent;
     private Collider2D plantTarget;
+    public float SpawnChance;
 
 
 

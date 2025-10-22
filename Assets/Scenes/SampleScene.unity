@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FallingGrudgePrefab: {fileID: 5053934793873009689, guid: 48d546c98c39fa340a6390a6d4e023ef, type: 3}
-  timerMax: 700
+  timerMax: 600
 --- !u!4 &708284789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 169828673633761035, guid: 7d65ce18663d0e7479ca6656a009ba71, type: 3}
@@ -1970,7 +1970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieList:
-  - {fileID: 1067512848428459546, guid: 7b03a3be5640c654484da293ff38bcaf, type: 3}
+  - {fileID: 1821331085058906700, guid: 7b03a3be5640c654484da293ff38bcaf, type: 3}
+  - {fileID: 1821331085058906700, guid: 11e78bc7375299b48b1549f95c1a72fa, type: 3}
   spawnLocs:
   - {x: 10.07, y: 2.51, z: 0}
   - {x: 10.07, y: 0.91, z: 0}
