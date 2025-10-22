@@ -48,7 +48,7 @@ public class PlayerScript : MonoBehaviour
                 //PriceCheck
                 if(grudges >= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice)
                 {
-                    Instantiate(towers[ChosenTower], targetedTile.transform);
+                    Instantiate(towers[ChosenTower], targetedTile.transform).GetComponent<TowerBase>();
                     targetedTile.GetComponent<TileBaseScript>().hasTower = true;
                     grudges -= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice;
                     UIReference.UpdateGrudges(grudges);

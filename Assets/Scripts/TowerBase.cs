@@ -22,6 +22,8 @@ public class TowerBase : MonoBehaviour
 
     public void KillPlant()
     {
+        GetComponentInParent<TileBaseScript>().hasTower = false;
         Destroy(gameObject);
     }
+
 }
