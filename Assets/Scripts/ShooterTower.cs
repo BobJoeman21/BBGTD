@@ -21,7 +21,8 @@ public class ShooterTower : MonoBehaviour
         timerCurrent += 1f;
         if(timerCurrent >= timerMax && Physics2D.Raycast(transform.position, Vector3.right))
         {
-            Shoot();
+            GetComponent<Animator>().SetTrigger("Throw");
+            timerCurrent = 0f;
         }
     }
 
@@ -29,6 +30,10 @@ public class ShooterTower : MonoBehaviour
     void Shoot()
     {
         Instantiate(projectile, gameObject.transform);
-        timerCurrent = 0f;
+        
+        
     }
+
+
+    
 }

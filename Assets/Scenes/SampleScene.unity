@@ -3484,7 +3484,7 @@ MonoBehaviour:
   - {fileID: 5916127357719372237, guid: 14cc2705588899040bf88027428d81a7, type: 3}
   ChosenTower: -1
   ClickedPacket: {fileID: 0}
-  grudges: 0
+  grudges: 100
   GrudgeMask:
     serializedVersion: 2
     m_Bits: 64
