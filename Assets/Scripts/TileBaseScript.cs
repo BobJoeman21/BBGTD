@@ -8,6 +8,7 @@ public class TileBaseScript : MonoBehaviour
 
     public Color baseColor;
     public Color glowColor;
+    public Color invisColor;
     SpriteRenderer sprite;
     public bool hasTower;
     GameObject player;
@@ -20,7 +21,24 @@ public class TileBaseScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    
+
+    private void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (player.GetComponent<PlayerScript>().targetedPacket != null)
+            {
+                sprite.color = baseColor;
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            sprite.color = invisColor;
+        }
+    }
+
 
 
     private void OnMouseEnter()
@@ -28,6 +46,7 @@ public class TileBaseScript : MonoBehaviour
 
         if (player.GetComponent<PlayerScript>().ChosenTower >= 0 && !hasTower)
         {
+
             sprite.color = glowColor;
             player.GetComponent<PlayerScript>().targetedTile = gameObject;
         }
@@ -35,7 +54,16 @@ public class TileBaseScript : MonoBehaviour
 
     private void OnMouseExit()
     {
-        sprite.color = baseColor;
+        if (Input.GetMouseButton(0))
+        {
+            sprite.color = baseColor;
+        }
+        else
+        {
+            sprite.color = invisColor;
+        }
+            
+
         player.GetComponent<PlayerScript>().targetedTile = null;
     }
 

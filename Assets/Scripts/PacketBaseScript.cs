@@ -17,7 +17,7 @@ public class PacketBaseScript : MonoBehaviour
     public int TowerValue;
     SpriteRenderer sprite;
     GameObject player;
-    
+
 
 
     private void Start()
@@ -32,12 +32,13 @@ public class PacketBaseScript : MonoBehaviour
         if (OnCooldown)
         {
             CooldownCurrent += 1;
-            if( CooldownCurrent >= CooldownMax)
+            if (CooldownCurrent >= CooldownMax)
             {
                 CooldownCurrent = 0;
                 EndCooldown();
             }
         }
+
     }
 
     private void OnMouseEnter()
@@ -70,5 +71,6 @@ public class PacketBaseScript : MonoBehaviour
         OnCooldown = false;
         sprite.color = baseColor;
     }
+
 
 }
