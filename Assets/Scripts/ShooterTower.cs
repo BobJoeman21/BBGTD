@@ -8,18 +8,14 @@ public class ShooterTower : MonoBehaviour
     float timerCurrent = 0f;
     public float timerMax = 125f;
     public GameObject projectile;
+    [SerializeField] private LayerMask zombieLayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         timerCurrent += 1f;
-        if(timerCurrent >= timerMax && Physics2D.Raycast(transform.position, Vector3.right))
+        if(timerCurrent >= timerMax && Physics2D.Raycast(new Vector3(12, transform.position.y, 0), Vector3.left, (12 - transform.position.x), zombieLayer))
         {
             GetComponent<Animator>().SetTrigger("Throw");
             timerCurrent = 0f;

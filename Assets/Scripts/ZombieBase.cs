@@ -13,6 +13,7 @@ public class ZombieBase : MonoBehaviour
     public LayerMask plantLayer;
     private int attackTimerCurrent;
     private Collider2D plantTarget;
+    private Vector3 gameOverLocation = new Vector3(-8, 0);
 
 
 
@@ -84,6 +85,12 @@ public class ZombieBase : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+
+    public void EndGame()
+    {
+
     }
 
 }

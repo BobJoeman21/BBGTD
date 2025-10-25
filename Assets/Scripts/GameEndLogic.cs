@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class GameEndLogic : MonoBehaviour
 {
-
+    public GameObject MainCam;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 8)
         {
-            Debug.Log("ENd");
-            Application.Quit();
+            collision.GetComponent<ZombieBase>().EndGame();
         }
     }
 }

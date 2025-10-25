@@ -54,7 +54,7 @@ public class TileBaseScript : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && player.GetComponent<PlayerScript>().ChosenTower >= 0)
         {
             sprite.color = baseColor;
         }
