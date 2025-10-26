@@ -29,20 +29,7 @@ public class ZombieBase : MonoBehaviour
                 plantTarget = Physics2D.OverlapCircle(transform.position, .2f, plantLayer);
                 eating = true;
             }
-        }//Walk If Not Eating
-        
-        
-        //StopEatingPlantIfCheckIsNull
-        /*else
-        {
-            if (eating)
-            {
-                eating = false;
-                attackTimerCurrent = 0;
-            }
-            
         }
-        */
         if (eating)
         {
             attackTimerCurrent += 1;
@@ -74,8 +61,12 @@ public class ZombieBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
-        TakeDamage(1);
+        if(other.gameObject.tag == "Projectile")
+        {
+            Destroy(other.gameObject);
+            TakeDamage(1);
+        }
+        
     }
 
     void TakeDamage(int dmg)
