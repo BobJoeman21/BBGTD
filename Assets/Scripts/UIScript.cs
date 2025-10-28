@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using TMPro;
 
 public class UIScript : MonoBehaviour
@@ -39,6 +40,8 @@ public class UIScript : MonoBehaviour
             yield return null;
         }
         Debug.Log("JUMPSCARE");
+        blackFadeimg.color = new Color(1, 1, 1, 0);
+        gameObject.GetComponent<VideoPlayer>().Play();
         
 
     }

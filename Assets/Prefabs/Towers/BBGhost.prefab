@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67204b1edd5bd6146bc8bd4756b84341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 175
+  timerMax: 125
   projectile: {fileID: 5907292056530742916, guid: 586af7a2bb5cffa40a80089a82ab4d86, type: 3}
   zombieLayer:
     serializedVersion: 2
