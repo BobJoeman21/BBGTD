@@ -59,7 +59,17 @@ public class ZombieManager : MonoBehaviour
         hordeTimerCurrent += 1;
         if(timerCurrent >= firstSpawnMax)
         {
-            SpawnZombie(Random.value);
+            if (DifficultyLevel <= 1)
+            {
+                SpawnZombie(Random.value);
+            }
+            else
+            {
+                for (int i = 0; i <= DifficultyLevel; i++)
+                {
+                    SpawnZombie(Random.value);
+                }
+            }
             firstSpawnMax = timerMax;
             timerCurrent = 0;
         }
