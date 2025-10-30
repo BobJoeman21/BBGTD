@@ -45,6 +45,7 @@ public class GameEndLogic : MonoBehaviour
             if (GameRunning)
             {
                 GameRunning = false;
+                GetComponent<AudioSource>().Play();
                 StartCoroutine(MoveCam());
             }
 
