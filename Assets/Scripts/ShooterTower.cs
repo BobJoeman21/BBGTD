@@ -8,6 +8,7 @@ public class ShooterTower : MonoBehaviour
     float timerCurrent = 0f;
     public float timerMax = 125f;
     public GameObject projectile;
+    public AudioSource AudioPlayer;
     [SerializeField] private LayerMask zombieLayer;
 
 
@@ -25,6 +26,7 @@ public class ShooterTower : MonoBehaviour
 
     void Shoot()
     {
+        AudioPlayer.Play();
         Instantiate(projectile, gameObject.transform);
         
         

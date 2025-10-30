@@ -9,9 +9,11 @@ public class GrudgeScript : MonoBehaviour
     private bool moving;
     public bool fallingGrudge;
     private Vector3 fallingTarget;
+    public AudioSource collectSFX;
 
     public void collect()
     {
+        collectSFX.Play();
         directionToTarget = (targetPos - transform.position).normalized;
         moving = true;
     }

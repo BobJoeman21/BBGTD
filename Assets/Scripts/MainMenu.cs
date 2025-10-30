@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public Image blackFade;
+    public AudioSource MMMusic;
     bool timerRunning = false;
     int timer = 0;
 
@@ -41,6 +42,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //Play Cutscene
+        MMMusic.Stop();
         gameObject.GetComponent<VideoPlayer>().Play();
         //Start Timer
         timerRunning = true;

@@ -14,9 +14,14 @@ public class PlayerScript : MonoBehaviour
     public LayerMask GrudgeMask;
     public UIScript UIReference;
 
+    //Audio
+    public AudioClip[] souds;
+    private AudioSource AudioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
+        AudioPlayer = GetComponent<AudioSource>();
         Application.targetFrameRate = 144;
     }
 
@@ -53,6 +58,8 @@ public class PlayerScript : MonoBehaviour
                     grudges -= towers[ChosenTower].GetComponent<TowerBase>().TowerPrice;
                     UIReference.UpdateGrudges(grudges);
                     ClickedPacket.Cooldown();
+                    AudioPlayer.clip = souds[0];
+                    AudioPlayer.Play();
                 }
                 
             }
