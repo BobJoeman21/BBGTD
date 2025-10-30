@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEndLogic : MonoBehaviour
 {
@@ -24,8 +25,18 @@ public class GameEndLogic : MonoBehaviour
             MainCam.transform.Translate((camEndPoint - camstartPoint).normalized * Time.deltaTime * .5f * (MainCam.transform.position - camEndPoint).magnitude);
             yield return null;
         }
-        UIRef.StartCoroutine(UIRef.FadeToBlack());
+        UIRef.StartCoroutine(UIRef.FadeToBlack(this));
     }
+
+
+    public IEnumerator EndAfterSeconds(double time)
+    {
+        yield return new WaitForSeconds(((float)time));
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

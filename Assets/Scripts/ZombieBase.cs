@@ -14,7 +14,14 @@ public class ZombieBase : MonoBehaviour
     private int attackTimerCurrent;
     private Collider2D plantTarget;
     private Vector3 gameOverLocation = new Vector3(-8, 0);
+    private AudioSource AudioPlayer;
 
+
+
+    private void Start()
+    {
+        AudioPlayer = GetComponent<AudioSource>();
+    }
 
 
     // Update is called once per frame
@@ -63,6 +70,7 @@ public class ZombieBase : MonoBehaviour
     {
         if(other.gameObject.tag == "Projectile")
         {
+            AudioPlayer.Play();
             Destroy(other.gameObject);
             TakeDamage(1);
         }

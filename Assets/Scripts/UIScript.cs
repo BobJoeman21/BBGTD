@@ -26,7 +26,7 @@ public class UIScript : MonoBehaviour
     }
 
 
-    public IEnumerator FadeToBlack()
+    public IEnumerator FadeToBlack(GameEndLogic Trigger)
     {
         while(blackFadeimg.color.a < 1)
         {
@@ -42,6 +42,7 @@ public class UIScript : MonoBehaviour
         Debug.Log("JUMPSCARE");
         blackFadeimg.color = new Color(1, 1, 1, 0);
         gameObject.GetComponent<VideoPlayer>().Play();
+        Trigger.StartCoroutine(Trigger.EndAfterSeconds(gameObject.GetComponent<VideoPlayer>().length));
         
 
     }
