@@ -31,7 +31,7 @@ public class GameEndLogic : MonoBehaviour
 
     public IEnumerator EndAfterSeconds(double time)
     {
-        yield return new WaitForSeconds(((float)time));
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainMenu");
     }
 

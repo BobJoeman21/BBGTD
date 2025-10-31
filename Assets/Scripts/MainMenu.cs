@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public Image blackFade;
+    public RawImage vidPlayer;
     public AudioSource MMMusic;
     VideoPlayer vidPlay;
     bool timerRunning = false;
@@ -18,7 +19,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         vidPlay = GetComponent<VideoPlayer>();
-        vidPlay.url = "https://bobjoeman21.github.io/Unity-WebGL-Video-Testing/CutHand.mp4";
+        
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -49,6 +51,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //Play Cutscene
+        vidPlayer.color = new Color(1, 1, 1, 1);
         MMMusic.Stop();
         vidPlay.Play();
         //Start Timer
