@@ -70,8 +70,11 @@ public class ZombieBase : MonoBehaviour
     {
         if(other.gameObject.tag == "Projectile")
         {
-            AudioPlayer.Play();
-            Destroy(other.gameObject);
+            if (other.gameObject != null)
+            {
+                AudioPlayer.Play();
+                Destroy(other.gameObject);
+            }
             TakeDamage(1);
         }
         

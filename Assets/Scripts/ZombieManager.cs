@@ -33,9 +33,12 @@ public class ZombieManager : MonoBehaviour
             if(Random0to1 <= ZombieList[i].SpawnChance)
             {
                 Instantiate<GameObject>(ZombieList[i].ZombieToSpawn, spawnLocs[Random.Range(0, 5)], Quaternion.identity);
+                if(DifficultyLevel > 0)
                 ZombieList[0].SpawnChance = Mathf.Clamp((ZombieList[0].SpawnChance - 0.05f),0.1f,1f);
+                if(DifficultyLevel >=1)
                 ZombieList[1].SpawnChance = Mathf.Clamp((ZombieList[1].SpawnChance - 0.01f),.5f,1f);
-                ZombieList[2].SpawnChance = Mathf.Clamp((ZombieList[2].SpawnChance + 0.05f),.0f,1f);
+                if(DifficultyLevel >= 2)
+                ZombieList[2].SpawnChance = Mathf.Clamp((ZombieList[2].SpawnChance + 0.015f),.0f,1f);
                 return;
             }
 
@@ -45,10 +48,11 @@ public class ZombieManager : MonoBehaviour
     }
     public void SpawnHorde()
     {
+        if(DifficultyLevel > 4)
         ZombieList[0].SpawnChance += .25f;
-        ZombieList[1].SpawnChance += .05f;
+        ZombieList[1].SpawnChance += .08f;
         StartCoroutine(HordeSpawnLoop());
-        DifficultyLevel += 1;
+        
         timerMax -= 50;
         Debug.Log("SPAWNEDHORDE");
     }
@@ -75,6 +79,7 @@ public class ZombieManager : MonoBehaviour
         }
         if(hordeTimerCurrent >= hordeTimerMax)
         {
+            hordeTimerCurrent = 0;
             SpawnHorde();
             hordeTimerCurrent = 0;
         }
@@ -89,12 +94,13 @@ public class ZombieManager : MonoBehaviour
 
     IEnumerator HordeSpawnLoop()
     {
-        for (int i = 0; i <= 5 + (2 * DifficultyLevel); i++)
+        for (int i = 1; i <= 5 + (1 * DifficultyLevel); i++)
         {
             SpawnZombie(Random.value);
             yield return new WaitForSeconds(0.1f);
         }
-        
+        DifficultyLevel += 1;
+
     }
 
 

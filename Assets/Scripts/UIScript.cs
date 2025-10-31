@@ -16,8 +16,14 @@ public class UIScript : MonoBehaviour
     private int currentGrudges = 0;
     private float AlphaGoal = 0;
     private int timeOnEndScreen = 0;
+    private AudioSource bgmusic;
 
+    
 
+    private void Start()
+    {
+        bgmusic = GetComponent<AudioSource>();
+    }
     public void UpdateGrudges(int TotalGrudges)
     {
         GrudgesGoal = TotalGrudges;
@@ -30,6 +36,11 @@ public class UIScript : MonoBehaviour
     {
         while(blackFadeimg.color.a < 1)
         {
+            bgmusic.volume -= 0.05f;
+            if(bgmusic.volume <= 0)
+            {
+                bgmusic.Stop();
+            }
             AlphaGoal += 0.003f;
             blackFadeimg.color = new Color(1, 1, 1, AlphaGoal);
             yield return null;

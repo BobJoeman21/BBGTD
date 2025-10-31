@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 185219883}
   - component: {fileID: 185219887}
   - component: {fileID: 185219888}
+  - component: {fileID: 185219889}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -924,6 +925,102 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!82 &185219889
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185219882}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9d580be9a6eab9048b6456856003f034, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.889
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &187101527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 169828673633761035, guid: 7d65ce18663d0e7479ca6656a009ba71, type: 3}
@@ -2845,9 +2942,9 @@ MonoBehaviour:
   - ZombieToSpawn: {fileID: 1067512848428459546, guid: 7b03a3be5640c654484da293ff38bcaf, type: 3}
     SpawnChance: 1
   - ZombieToSpawn: {fileID: 1067512848428459546, guid: 11e78bc7375299b48b1549f95c1a72fa, type: 3}
-    SpawnChance: 0.91
+    SpawnChance: 0.92
   - ZombieToSpawn: {fileID: 1067512848428459546, guid: f0f1c275f7355f24e9e36260b50f9771, type: 3}
-    SpawnChance: 0.32
+    SpawnChance: 0.543
   spawnLocs:
   - {x: 10.31, y: 1.9, z: 0}
   - {x: 10.16, y: 0.51, z: 0}
@@ -2855,8 +2952,8 @@ MonoBehaviour:
   - {x: 9.91, y: -2.19, z: 0}
   - {x: 10.34, y: -3.5, z: 0}
   firstSpawnMax: 1000
-  timerMax: 1000
-  hordeTimerMax: 6000
+  timerMax: 800
+  hordeTimerMax: 5000
   TotalTime: 0
 --- !u!1001 &989606313
 PrefabInstance:
